@@ -1,0 +1,288 @@
+From af50df1b00758676b4ecca508db75fecc93ef10d Mon Sep 17 00:00:00 2001
+From: victorio <platkuning13@gmail.com>
+Date: Mon, 16 Dec 2019 11:34:24 +0700
+Subject: [PATCH] Selesai mengerjakan DAO dan Service ArrivalType.java Mohon
+ cek test saya
+
+---
+ bin/.gitignore                                |   7 +++
+ .../ale/fdx/entity/flight/ArrivalType.class   | Bin 8747 -> 8916 bytes
+ src/main/java/dev/ale/fdx/dao/ArrivalDao.java |   7 +++
+ .../dev/ale/fdx/dao/impl/ArrivalDaoImpl.java  |  11 ++++
+ .../ale/fdx/entity/flight/ArrivalType.java    |   6 ++-
+ .../dev/ale/fdx/service/ArrivalService.java   |   7 +++
+ .../fdx/service/impl/ArrivalServiceImpl.java  |  32 +++++++++++
+ .../java/dev/ale/fdx/test/TestArrival.java    |  51 ++++++++++++++++++
+ 8 files changed, 120 insertions(+), 1 deletion(-)
+ create mode 100644 bin/.gitignore
+ create mode 100644 src/main/java/dev/ale/fdx/dao/ArrivalDao.java
+ create mode 100644 src/main/java/dev/ale/fdx/dao/impl/ArrivalDaoImpl.java
+ create mode 100644 src/main/java/dev/ale/fdx/service/ArrivalService.java
+ create mode 100644 src/main/java/dev/ale/fdx/service/impl/ArrivalServiceImpl.java
+ create mode 100644 src/main/java/dev/ale/fdx/test/TestArrival.java
+
+diff --git a/bin/.gitignore b/bin/.gitignore
+new file mode 100644
+index 0000000..d9e9ece
+--- /dev/null
++++ b/bin/.gitignore
+@@ -0,0 +1,7 @@
++/META-INF/
++/database.properties
++/dev/
++/main/
++/org/
++/xml/
++/xsd/
+diff --git a/bin/dev/ale/fdx/entity/flight/ArrivalType.class b/bin/dev/ale/fdx/entity/flight/ArrivalType.class
+index cfb0dccee4d7744ab29561c2e5feac91a4374df1..8b3f8f1d4d6cea563908510237dc5c6ecd3cf9dc 100644
+GIT binary patch
+delta 3229
+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
+
+delta 3017
+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
+U#}SMp8-FK{*V<?J+%f*~Uy&?1_W%F@
+
+diff --git a/src/main/java/dev/ale/fdx/dao/ArrivalDao.java b/src/main/java/dev/ale/fdx/dao/ArrivalDao.java
+new file mode 100644
+index 0000000..34950ac
+--- /dev/null
++++ b/src/main/java/dev/ale/fdx/dao/ArrivalDao.java
+@@ -0,0 +1,7 @@
++package dev.ale.fdx.dao;
++
++import dev.ale.fdx.entity.flight.ArrivalType;
++
++public interface ArrivalDao extends GenericDao<ArrivalType, Long> {
++
++}
+diff --git a/src/main/java/dev/ale/fdx/dao/impl/ArrivalDaoImpl.java b/src/main/java/dev/ale/fdx/dao/impl/ArrivalDaoImpl.java
+new file mode 100644
+index 0000000..4910374
+--- /dev/null
++++ b/src/main/java/dev/ale/fdx/dao/impl/ArrivalDaoImpl.java
+@@ -0,0 +1,11 @@
++package dev.ale.fdx.dao.impl;
++
++import org.springframework.stereotype.Repository;
++
++import dev.ale.fdx.dao.ArrivalDao;
++import dev.ale.fdx.entity.flight.ArrivalType;
++
++@Repository
++public class ArrivalDaoImpl extends GenericDaoImpl<ArrivalType, Long> implements ArrivalDao{
++
++}
+diff --git a/src/main/java/dev/ale/fdx/entity/flight/ArrivalType.java b/src/main/java/dev/ale/fdx/entity/flight/ArrivalType.java
+index b5cebae..fa9899b 100644
+--- a/src/main/java/dev/ale/fdx/entity/flight/ArrivalType.java
++++ b/src/main/java/dev/ale/fdx/entity/flight/ArrivalType.java
+@@ -15,6 +15,7 @@ import javax.persistence.Basic;
+ import javax.persistence.CascadeType;
+ import javax.persistence.Column;
+ import javax.persistence.Entity;
++import javax.persistence.FetchType;
+ import javax.persistence.JoinColumn;
+ import javax.persistence.ManyToOne;
+ import javax.persistence.OneToMany;
+@@ -28,6 +29,8 @@ import javax.xml.bind.annotation.XmlAttribute;
+ import javax.xml.bind.annotation.XmlType;
+ import javax.xml.datatype.XMLGregorianCalendar;
+ 
++import org.hibernate.annotations.LazyCollection;
++import org.hibernate.annotations.LazyCollectionOption;
+ import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XMLGregorianCalendarAsDateTime;
+ import org.jvnet.hyperjaxb3.xml.bind.annotation.adapters.XmlAdapterUtils;
+ import org.jvnet.jaxb2_commons.lang.Equals;
+@@ -208,8 +211,9 @@ public class ArrivalType
+      */
+     @OneToMany(targetEntity = AerodromeReferenceType.class, cascade = {
+         CascadeType.ALL
+-    })
++    }, fetch = FetchType.LAZY)
+     @JoinColumn(name = "DESTINATIONAERODROMEALTERNAT_0")
++    @LazyCollection(LazyCollectionOption.FALSE)
+     public List<AerodromeReferenceType> getDestinationAerodromeAlternate() {
+         if (destinationAerodromeAlternate == null) {
+             destinationAerodromeAlternate = new ArrayList<AerodromeReferenceType>();
+diff --git a/src/main/java/dev/ale/fdx/service/ArrivalService.java b/src/main/java/dev/ale/fdx/service/ArrivalService.java
+new file mode 100644
+index 0000000..a90d0a7
+--- /dev/null
++++ b/src/main/java/dev/ale/fdx/service/ArrivalService.java
+@@ -0,0 +1,7 @@
++package dev.ale.fdx.service;
++
++import dev.ale.fdx.entity.flight.ArrivalType;
++
++public interface ArrivalService extends GenericService<ArrivalType, Long>{
++
++}
+diff --git a/src/main/java/dev/ale/fdx/service/impl/ArrivalServiceImpl.java b/src/main/java/dev/ale/fdx/service/impl/ArrivalServiceImpl.java
+new file mode 100644
+index 0000000..fd6f3d4
+--- /dev/null
++++ b/src/main/java/dev/ale/fdx/service/impl/ArrivalServiceImpl.java
+@@ -0,0 +1,32 @@
++package dev.ale.fdx.service.impl;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
++import dev.ale.fdx.dao.ArrivalDao;
++import dev.ale.fdx.dao.GenericDao;
++import dev.ale.fdx.entity.flight.ArrivalType;
++import dev.ale.fdx.service.ArrivalService;
++
++@Service
++public class ArrivalServiceImpl extends GenericServiceImpl<ArrivalType, Long> implements ArrivalService{
++
++	private ArrivalDao dao;
++	
++	@Autowired
++	public ArrivalServiceImpl(GenericDao<ArrivalType, Long> genericDao) {
++		super(genericDao);
++		setDao((ArrivalDao) genericDao);
++		this.dao.setEntity(ArrivalType.class);
++	}
++
++	public ArrivalDao getDao() {
++		return dao;
++	}
++
++	public void setDao(ArrivalDao dao) {
++		this.dao = dao;
++	}
++
++
++}
+diff --git a/src/main/java/dev/ale/fdx/test/TestArrival.java b/src/main/java/dev/ale/fdx/test/TestArrival.java
+new file mode 100644
+index 0000000..77474bf
+--- /dev/null
++++ b/src/main/java/dev/ale/fdx/test/TestArrival.java
+@@ -0,0 +1,51 @@
++package dev.ale.fdx.test;
++
++import org.springframework.context.annotation.AnnotationConfigApplicationContext;
++
++import dev.ale.fdx.config.AppConfig;
++import dev.ale.fdx.entity.base.AerodromeReferenceType;
++import dev.ale.fdx.entity.base.IcaoAerodromeReferenceType;
++import dev.ale.fdx.entity.flight.ArrivalType;
++import dev.ale.fdx.service.ArrivalService;
++
++public class TestArrival {
++
++
++	public static void main(String [] args) {
++
++		AnnotationConfigApplicationContext context = 
++				new AnnotationConfigApplicationContext(AppConfig.class); 
++		
++		//Yang di test adalah CRUD
++		//Create
++		//Retrieve
++		//Update
++		//Delete
++		
++		ArrivalService arrService = context.getBean(ArrivalService.class);
++		
++		//Buat object ArrivalType
++		ArrivalType arrival = new ArrivalType();
++		
++		//Set runway
++//		arrival.setRunwayDirection("010");
++		
++		//Set AerodromeReferenceType
++		//Pakai ICAOreferenceType
++//		IcaoAerodromeReferenceType aerodrome = new IcaoAerodromeReferenceType();
++//		aerodrome.setLocationIndicator("WIII");
++//		arrival.setArrivalAerodrome(aerodrome);
++//		
++//		
++//		arrService.create(arrival);
++		
++		
++		
++		//Test Retrieve
++		ArrivalType arrivalRetrieve = arrService.retrieve(7L);
++		System.out.println(arrivalRetrieve);
++		System.out.println(arrivalRetrieve.getAirportSlotIdentification());
++		System.out.println(arrivalRetrieve.getArrivalAerodrome());
++
++	}
++}
+-- 
+2.18.0.windows.1
+

@@ -1,0 +1,412 @@
+<fx:Flight xmlns:fx="http://www.fixm.aero/flight/4.1"
+	xmlns:fb="http://www.fixm.aero/base/4.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="../xsd/Fixm.xsd " flightType="S">
+	<fx:aircraft aircraftAddress="7C5325" registration="VHQPJ"
+		aircraftApproachCategory="C" wakeTurbulence="Z">
+		<fx:aircraftType>
+			<fx:type xsi:type="fx:IcaoAircraftTypeReferenceType"
+				icaoAircraftTypeDesignator="A333" />
+		</fx:aircraftType>
+		<fx:capabilities standardCapabilities="STANDARD">
+			<fx:communication selectiveCallingCode="CEFS">
+				<fx:communicationCapabilityCode>
+					E2 E3 H M1 Y
+				</fx:communicationCapabilityCode>
+				<fx:datalinkCommunicationCapabilityCode>
+					J3 J5
+				</fx:datalinkCommunicationCapabilityCode>
+			</fx:communication>
+			<fx:navigation
+				otherNavigationCapabilities="RNP2 RNVD1A1">
+				<fx:navigationCapabilityCode>
+					D G I W
+				</fx:navigationCapabilityCode>
+				<fx:performanceBasedCode>
+					A1 B1 C1 D1 L1 O1 S2
+				</fx:performanceBasedCode>
+			</fx:navigation>
+			<fx:surveillance>
+				<fx:surveillanceCapabilityCode>
+					L B1 D1
+				</fx:surveillanceCapabilityCode>
+			</fx:surveillance>
+		</fx:capabilities>
+	</fx:aircraft>
+	<fx:arrival>
+		<fx:destinationAerodrome
+			xsi:type="fb:IcaoAerodromeReferenceType" locationIndicator="YSSY">
+			<fb:referencePoint xsi:type="fb:PositionPointType">
+				<fb:position srsName="urn:ogc:def:crs:EPSG::4326">
+					<fb:pos>
+						-33.95 151.18
+					</fb:pos>
+				</fb:position>
+			</fb:referencePoint>
+		</fx:destinationAerodrome>
+		<fx:reclearanceInFlight
+			routeToRevisedDestination="PKS W703 CWR W137 AVBEG">
+			<fx:filedRevisedDestinationAerodrome
+				xsi:type="fb:IcaoAerodromeReferenceType" locationIndicator="YSCB" />
+		</fx:reclearanceInFlight>
+	</fx:arrival>
+	<fx:departure estimatedOffBlockTime="2019-10-30T11:25:00Z">
+		<fx:aerodrome xsi:type="fb:IcaoAerodromeReferenceType"
+			locationIndicator="VTBS">
+			<fb:referencePoint xsi:type="fb:PositionPointType">
+				<fb:position srsName="urn:ogc:def:crs:EPSG::4326">
+					<fb:pos>
+						13.69 100.75
+					</fb:pos>
+				</fb:position>
+			</fb:referencePoint>
+		</fx:aerodrome>
+	</fx:departure>
+	<fx:filed>
+		<fx:element seqNum="0">
+			<fx:routeDesignatorToNextElement />
+		</fx:element>
+		<fx:element seqNum="1">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					13.11 100.85
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>Y11</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="KIGOB" />
+		</fx:element>
+		<fx:element seqNum="2">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					12.67 101
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>Y11</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="BUT" />
+		</fx:element>
+		<fx:element seqNum="3">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					11.59 101.08
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>N891</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="NOMEP" />
+		</fx:element>
+		<fx:element seqNum="4">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					9.04 101.66
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeChange xsi:type="fx:SpeedChangeType">
+				<fx:speed uom="MACH">
+					0.8
+				</fx:speed>
+			</fx:routeChange>
+			<fx:routeChange xsi:type="fx:LevelChangeType">
+				<fx:level>
+					<fb:flightLevel uom="FL">
+						330
+					</fb:flightLevel>
+				</fx:level>
+			</fx:routeChange>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>N891</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="TENUM" />
+		</fx:element>
+		<fx:element seqNum="5">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					6.87 102.83
+				</fb:pos>
+				<fx:pointProperty
+					propertyType="FIR_BOUNDARY_CROSSING_POINT">
+					<fx:reference identifier="WSJC" />
+				</fx:pointProperty>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="TIDAR" />
+		</fx:element>
+		<fx:element seqNum="6">
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>N875</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="ENREP" />
+		</fx:element>
+		<fx:element seqNum="7">
+			<fx:routeChange xsi:type="fx:SpeedChangeType">
+				<fx:speed uom="MACH">
+					0.81
+				</fx:speed>
+			</fx:routeChange>
+			<fx:routeChange xsi:type="fx:LevelChangeType">
+				<fx:level>
+					<fb:flightLevel uom="FL">
+						370
+					</fb:flightLevel>
+				</fx:level>
+			</fx:routeChange>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>N875</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="LEBIN" />
+		</fx:element>
+		<fx:element seqNum="8">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					0.53 108.81
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="ARUPA" />
+		</fx:element>
+		<fx:element seqNum="9">
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>G464</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="PNK" />
+		</fx:element>
+		<fx:element seqNum="10">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-2.06 111.1
+				</fb:pos>
+				<fx:pointProperty
+					propertyType="FIR_BOUNDARY_CROSSING_POINT">
+					<fx:reference identifier="WAAF" />
+				</fx:pointProperty>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="SUGIK" />
+		</fx:element>
+		<fx:element seqNum="11">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-2.72 111.69
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="PKN" />
+		</fx:element>
+		<fx:element seqNum="12">
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>M635</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="BLI" />
+		</fx:element>
+		<fx:element seqNum="13">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-12 118.25
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeChange xsi:type="fx:SpeedChangeType">
+				<fx:speed uom="MACH">
+					0.81
+				</fx:speed>
+			</fx:routeChange>
+			<fx:routeChange xsi:type="fx:LevelChangeType">
+				<fx:level>
+					<fb:flightLevel uom="FL">
+						390
+					</fb:flightLevel>
+				</fx:level>
+			</fx:routeChange>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>A576</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="ATMAP" />
+		</fx:element>
+		<fx:element seqNum="14">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-17.59 123.85
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="CIN" />
+		</fx:element>
+		<fx:element seqNum="15">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-19.43 126.65
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="TATUK" />
+		</fx:element>
+		<fx:element seqNum="16">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-21.92 130.66
+				</fb:pos>
+				<fx:pointProperty
+					propertyType="FIR_BOUNDARY_CROSSING_POINT">
+					<fx:reference identifier="YMMM" />
+				</fx:pointProperty>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="TIMMI" />
+		</fx:element>
+		<fx:element seqNum="17">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-23.79 133.88
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="AS" />
+		</fx:element>
+		<fx:element seqNum="18">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-25.9 136.73
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="KALUG" />
+		</fx:element>
+		<fx:element seqNum="19">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-26.92 138.17
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="POLEV" />
+		</fx:element>
+		<fx:element seqNum="20">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-29.9 142.68
+				</fb:pos>
+			</fx:point4D>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="APOMA" />
+		</fx:element>
+		<fx:element seqNum="21">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-33.13 146.23
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>H319</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="PKS" />
+		</fx:element>
+		<fx:element seqNum="22">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-34.62 148.49
+				</fb:pos>
+				<fx:pointProperty propertyType="TOP_OF_DESCENT" />
+			</fx:point4D>
+		</fx:element>
+		<fx:element seqNum="23">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-34.5 149.93
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeDesignatorToNextElement>
+				<fx:routeDesignator>Y59</fx:routeDesignator>
+			</fx:routeDesignatorToNextElement>
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="TARAL" />
+		</fx:element>
+		<fx:element seqNum="24">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-34.28 150.43
+				</fb:pos>
+			</fx:point4D>
+			<fx:routeDesignatorToNextElement />
+			<fx:routePoint
+				xsi:type="fb:DesignatedPointOrNavaidType" designator="RIVET" />
+		</fx:element>
+		<fx:element seqNum="25">
+			<fx:point4D srsName="urn:ogc:def:crs:EPSG::4326">
+				<fb:pos>
+					-33.95 151.18
+				</fb:pos>
+				<fx:pointProperty propertyType="WHEELS_ON" />
+			</fx:point4D>
+		</fx:element>
+		<fx:routeInformation
+			totalEstimatedElapsedTime="PT8H24M" flightRulesCategory="I"
+			routeText="DCT RYN N891 BENSA/M080F330 N891 ENREP N875 LEBIN/M081F370 N875 PNK G464 BLI M635 ATMAP/M081F390 A576 PKS H319 TARAL Y59 RIVET DCT">
+			<fx:cruisingLevel>
+				<fb:flightLevel uom="FL">
+					330
+				</fb:flightLevel>
+			</fx:cruisingLevel>
+			<fx:cruisingSpeed uom="KT">
+				482
+			</fx:cruisingSpeed>
+			<fx:estimatedElapsedTime elapsedTime="PT33M">
+				<fx:location>
+					<fx:region>VDPP</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+			<fx:estimatedElapsedTime elapsedTime="PT43M">
+				<fx:location>
+					<fx:region>VVTS</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+			<fx:estimatedElapsedTime elapsedTime="PT1H1M">
+				<fx:location>
+					<fx:region>WSJC</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+			<fx:estimatedElapsedTime elapsedTime="PT2H8M">
+				<fx:location>
+					<fx:region>WIIF</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+			<fx:estimatedElapsedTime
+				elapsedTime="PT2H33M">
+				<fx:location>
+					<fx:region>WAAF</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+			<fx:estimatedElapsedTime elapsedTime="PT4H4M">
+				<fx:location>
+					<fx:region>YBBB</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+			<fx:estimatedElapsedTime
+				elapsedTime="PT5H51M">
+				<fx:location>
+					<fx:region>YMMM</fx:region>
+				</fx:location>
+			</fx:estimatedElapsedTime>
+		</fx:routeInformation>
+	</fx:filed>
+	<fx:flightIdentification
+		aircraftIdentification="QFA24" />
+	<fx:flightPlanOriginator name="YSSYQFAO" />
+	<fx:gufi codeSpace="urn:uuid">a79db12b-7797-4f88-8f42-4bf1c15a8800</fx:gufi>
+	<fx:operator>
+		<fb:operatingOrganization
+			name="QANTAS AIRWAYS" />
+	</fx:operator>
+</fx:Flight>

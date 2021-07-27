@@ -1,0 +1,92 @@
+package dev.ale.fdx;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import dev.ale.fdx.service.FlightService;
+
+public class FdxListener extends Thread {
+	
+	private ServerSocket serverSocket;
+	private Integer port;
+	
+	//static variable relative path inbox
+	
+	public Integer getPort() {
+		return port;
+	}
+
+
+	public void setPort(Integer port) {
+		try {
+			serverSocket = new ServerSocket(port);
+			System.out.println("Server On");
+			System.out.println("Waiting Client");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		this.port = port;
+	}
+
+
+	public void run() {
+		
+		while(true) {
+			try {
+			Socket socket = serverSocket.accept();
+			InetAddress Inetaddr = socket.getInetAddress();
+			System.out.println("Client terhubung :" +Inetaddr);
+			saveFile(socket);
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		}	
+	}
+	
+	
+	public void saveFile(Socket socket) throws IOException {
+		
+		DataInputStream dis = new DataInputStream(socket.getInputStream());
+		FileOutputStream fos = new FileOutputStream("barcode.jpg");
+		byte[] buffer = new byte[2094];
+		
+		int filesize = 15123;
+		int read= 0;
+		int totalRead= 0;
+		int remaining = filesize;
+		
+		while((read = dis.read(buffer, 0, Math.min(buffer.length, remaining))) > 0) {
+			totalRead += read;
+			remaining -= read;
+			System.out.println("read " + totalRead + " bytes.");
+			fos.write(buffer, 0, read);
+		}
+		fos.close();
+		dis.close();
+	}
+//		//DataInputStream
+//		//FileOuputStream ke folder src/main/resour	ce/inbox
+//
+//		//Read from src/main/resource/inbox
+//		//Validate
+//		//if valid unmarshal user FlightService for inserting into DB
+//			//send message to client 1
+//			//after succeed on inserting into DB delete from inbox
+//		//else delete file in inbox
+//			//send message to client 0
+//		try {
+//		DataInputStream dis = new DataInputStream(socket.getInputStream());
+//		FileOutputStream fos = new FileOutputStream("");
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}
+	}
+

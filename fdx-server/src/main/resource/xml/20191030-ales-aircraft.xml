@@ -1,0 +1,35 @@
+<fx:aircraft xmlns:fx="http://www.fixm.aero/flight/4.1"
+	xmlns:fb="http://www.fixm.aero/base/4.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="../xsd/Fixm.xsd"
+	aircraftAddress="7C5325" registration="VHQPJ"
+	aircraftApproachCategory="C" wakeTurbulence="H">
+	<fx:aircraftType>
+		<fx:type xsi:type="fx:IcaoAircraftTypeReferenceType"
+			icaoAircraftTypeDesignator="A333" />
+	</fx:aircraftType>
+	<fx:capabilities standardCapabilities="STANDARD">
+		<fx:communication selectiveCallingCode="CEFS">
+			<fx:communicationCapabilityCode>
+				E2 E3 H M1 Y
+			</fx:communicationCapabilityCode>
+			<fx:datalinkCommunicationCapabilityCode>
+				J3 J5
+			</fx:datalinkCommunicationCapabilityCode>
+		</fx:communication>
+		<fx:navigation
+			otherNavigationCapabilities="RNP2 RNVD1A1">
+			<fx:navigationCapabilityCode>
+				D G I W
+			</fx:navigationCapabilityCode>
+			<fx:performanceBasedCode>
+				A1 B1 C1 D1 L1 O1 S2
+			</fx:performanceBasedCode>
+		</fx:navigation>
+		<fx:surveillance>
+			<fx:surveillanceCapabilityCode>
+				L B1 D1
+			</fx:surveillanceCapabilityCode>
+		</fx:surveillance>
+	</fx:capabilities>
+</fx:aircraft>
